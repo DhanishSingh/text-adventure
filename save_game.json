@@ -1,0 +1,10 @@
+{
+  "player": {
+    "current_scene": "right_path",
+    "inventory": [],
+    "flags": {},
+    "stats": {
+      "health": 100
+    }
+  }
+}

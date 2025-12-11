@@ -1,0 +1,31 @@
+{
+  "start": {
+    "text": "You wake up in a small clearing. Two paths lie ahead.",
+    "choices": {
+      "A": {"text": "Take the left path", "target": "left_path"},
+      "B": {"text": "Take the right path", "target": "right_path"}
+    }
+  },
+  "left_path": {
+    "text": "You find an old cabin. A lantern rests on a table.",
+    "choices": {
+      "A": {"text": "Take the lantern", "target": "inside_cabin", "effects":[{"type":"add_item","item":"lantern"},{"type":"set_flag","name":"took_lantern","value":true}]},
+      "B": {"text": "Leave the cabin", "target": "start"}
+    }
+  },
+  "right_path": {
+    "text": "A river blocks the way. You cannot cross without a lantern.",
+    "choices": {
+      "A": {"text": "Try to cross", "target": "river_fail", "requirements":[{"type":"has_item","item":"lantern"}]},
+      "B": {"text": "Return", "target": "start"}
+    }
+  },
+  "inside_cabin": {
+    "text": "With the lantern you explore the cabin and find a map. This is the end of the demo.",
+    "ending": true
+  },
+  "river_fail": {
+    "text": "You cannot cross the river without light. You return defeated.",
+    "choices": {"A": {"text": "Return", "target": "start"}}
+  }
+}
